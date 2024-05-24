@@ -8,7 +8,32 @@ models:
 
     columns:
       - name: _row
+        data_type: number
+        constraints:
+          - type: not_null
+        description: >
+          Number of row
       - name: product_id
+        data_type: text
+        constraints:
+          - type: not_null
+        description: >
+          Product key
       - name: quantity
+        data_type: number
+        constraints:
+          - type: not_null
+        description: >
+          Number of row
       - name: month
-      - name: _fivetran_synced
+        data_type: date
+        constraints:
+          - type: not_null
+        description: >
+          Number of row
+      - name: date_load
+        data_type: TIMESTAMP_TZ
+        constraints:
+          - type: not_null
+        description: >
+          Number of row
