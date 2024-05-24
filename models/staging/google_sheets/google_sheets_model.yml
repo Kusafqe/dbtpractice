@@ -5,7 +5,7 @@ models:
     config:
       contract:
         enforced: true
-  
+
     columns:
       - name: _row
       - name: product_id
