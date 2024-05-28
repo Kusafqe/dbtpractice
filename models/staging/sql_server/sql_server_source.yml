@@ -23,3 +23,16 @@ sources:
           - name: status
           - name: _fivetran_deleted
           - name: _fivetran_synced
+
+
+      - name: orders
+        loaded_at_field: _fivetran_synced
+        columns:
+          - name: order_id
+          - name: shipping_service
+          - name: shipping_cost
+          - name: address_id
+          - name: created_at
+          - name: promo_id
+          - name: _fivetran_deleted
+          - name: _fivetran_synced
