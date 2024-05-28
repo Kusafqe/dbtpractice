@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_promos
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: promo_id
+        data_type: text
+        constraints:
+          - type: not_null
+        description: >
+          asñldkjf
+      - name: promo_name
+        data_type: text
+      - name: discount_euros
+        data_type: number
+      - name: status
+        data_type: text
+      - name: _fivetran_deleted
+        data_type: boolean
+      - name: _fivetran_synced
+        data_type: timestamp_tz

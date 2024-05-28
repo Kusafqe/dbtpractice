@@ -15,13 +15,11 @@ sources:
       error_after: { count: 48, period: hour }
 
     tables:
-      - name: addresses
+      - name: promos
         loaded_at_field: _fivetran_synced
         columns:
-          - name: address_id
-          - name: zipcode
-          - name: country
-          - name: address
-          - name: state
+          - name: promo_id
+          - name: discount
+          - name: status
           - name: _fivetran_deleted
           - name: _fivetran_synced
