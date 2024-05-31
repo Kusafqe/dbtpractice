@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('sql_server', 'orders') }}
+    select * from {{ ref("base_sql_server__orders") }}
 
 ),
 
@@ -10,12 +10,10 @@ renamed as (
 
     select
         order_id,
-        shipping_service,
-        shipping_cost,
+        md5(IFF(shipping_service='', 'desconocido' , shipping_service)) as shipping_id,
         address_id,
         created_at,
-        promo_id as promo_name,
-        IFF(promo_id = '', md5('desconocido'), md5(promo_id)) as promo_id, 
+        promo_id,
         estimated_delivery_at,
         order_cost,
         user_id,
