@@ -12,7 +12,7 @@ models:
         constraints:
           - type: not_null
         description: >
-          asñldkjf
+          stf_promos's primary key
       - name: promo_name
         data_type: text
       - name: discount_euros
