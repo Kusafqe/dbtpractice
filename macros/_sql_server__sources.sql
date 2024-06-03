@@ -1,8 +1,8 @@
 {{
     codegen.generate_source(
-        schema_name = 'SQL_SERVER_DBO',
+        schema_name = 'google_sheets',
         database_name = 'ALUMNO3_DEV_BRONZE_DB',
-        table_names = ['addresses', 'users','order_items', 'events', 'products' ],
+        table_names = ['BUDGET' ],
         generate_columns = True,
         include_descriptions=True,
         include_data_types=True,
