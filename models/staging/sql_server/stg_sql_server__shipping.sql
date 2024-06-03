@@ -1,14 +1,13 @@
 
 with
 
-    source as (select shipping_service, shipping_cost from {{ ref("base_sql_server__orders") }}),
+    source as (select distinct shipping_id, shipping_service from {{ ref("base_sql_server__orders") }}),
 
     renamed as (
 
         select 
-            md5(shipping_service) as shipping_id,
+            shipping_id,
             IFF(shipping_service='', 'desconocido' , shipping_service) as shipping_service ,
-            shipping_cost
         from source
     )
 

@@ -10,17 +10,18 @@ renamed as (
 
     select
         order_id,
-        md5(IFF(shipping_service='', 'desconocido' , shipping_service)) as shipping_id,
+        shipping_id,
+        shipping_cost_euros
         address_id,
         created_at,
         promo_id,
         estimated_delivery_at,
-        order_cost,
+        order_cost_euros,
         user_id,
-        order_total,
+        order_total_euros,
         delivered_at,
         tracking_id,
-        status,
+        md5(status) as status_id,
         _fivetran_deleted,
         _fivetran_synced
 
