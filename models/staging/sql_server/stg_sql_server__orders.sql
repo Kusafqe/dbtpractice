@@ -21,7 +21,7 @@ renamed as (
         order_total_euros,
         delivered_at,
         tracking_id,
-        md5(status) as status_id,
+        status_id,
         _fivetran_deleted,
         _fivetran_synced
 

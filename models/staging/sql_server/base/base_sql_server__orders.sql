@@ -10,7 +10,7 @@ renamed as (
 
     select
         order_id,
-        shipping_service,
+        IFF(shipping_service='', 'desconocido' , shipping_service) as shipping_service,
         shipping_cost as shipping_cost_euros,
         md5(IFF(shipping_service='', 'desconocido' , shipping_service)) as shipping_id,
         address_id,
