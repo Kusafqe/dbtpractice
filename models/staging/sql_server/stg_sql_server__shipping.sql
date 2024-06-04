@@ -7,7 +7,7 @@ with
 
         select 
             shipping_id,
-            IFF(shipping_service='', 'desconocido' , shipping_service) as shipping_service ,
+            shipping_service ,
         from source
     )
 

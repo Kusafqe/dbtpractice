@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: core
+    description: ""
+    database: alumno3_dev_silver_db
+    schema: dbt_cgamez
+    # tables:

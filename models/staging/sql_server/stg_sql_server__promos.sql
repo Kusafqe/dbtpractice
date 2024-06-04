@@ -9,7 +9,7 @@ with
             promo_id,
             promo_name,
             discount_euros,
-            md5(status) as status_id, 
+            status_id, 
             _fivetran_deleted,
             _fivetran_synced
         from source
