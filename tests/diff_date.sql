@@ -1,5 +1,5 @@
 SELECT *
-FROM {{ ref('stg_sql_server__orders') }}
+FROM {{ ref('base_sql_server__orders') }}
 WHERE delivered_at < created_at
 /* comprueba si hay algún caso en el que la fecha
  de entrega sea anterior a la fecha en que se realizó 

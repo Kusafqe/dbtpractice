@@ -11,9 +11,9 @@ renamed as (
     select
         order_id,
         shipping_id,
-        shipping_cost_euros
+        shipping_cost_euros,
         address_id,
-        created_at,
+        (year(created_at)*10000+month(created_at)*100+day(created_at)) as date_id,
         promo_id,
         estimated_delivery_at,
         order_cost_euros,

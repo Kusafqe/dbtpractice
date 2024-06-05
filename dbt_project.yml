@@ -48,6 +48,9 @@ models:
     # Applies to all files under models/example/
     staging:
       +materialized: view
+    intermediate:
+      +materialized: view
+      +database: ALUMNO3_DEV_GOLD_DB
     marts:
       +materialized: table
       +database: ALUMNO3_DEV_GOLD_DB
