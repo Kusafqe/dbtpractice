@@ -7,6 +7,7 @@ source as (
     ON O.order_id = OI.order_id
     LEFT JOIN {{ ref("stg_sql_server__products")}} P
     ON OI.product_id = P.product_id
+    where O._fivetran_deleted is null
 
 ),
 
@@ -33,11 +34,11 @@ renamed as (
         delivered_at,
         tracking_id,
         status_id,
-        _fivetran_deleted,
+        --_fivetran_deleted,
         _fivetran_synced
 
     from source
-
+    
 )
 
 select * from renamed
