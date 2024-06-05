@@ -12,7 +12,7 @@ renamed as (
         order_id,
         IFF(shipping_service='', 'desconocido' , shipping_service) as shipping_service,
         shipping_cost as shipping_cost_euros,
-        md5(IFF(shipping_service='', 'desconocido' , shipping_service)) as shipping_id,
+        {{dbt_utils.generate_surrogate_key(['shipping_service'])}} as shipping_id,
         address_id,
         CONVERT_TIMEZONE('UTC',created_at) as created_at,
         IFF(promo_id = '', md5('desconocido'), md5(promo_id)) as promo_id, 
@@ -22,7 +22,7 @@ renamed as (
         order_total as order_total_euros,
         CONVERT_TIMEZONE('UTC',delivered_at) as delivered_at,
         tracking_id,
-        md5(status) as status_id,
+        {{dbt_utils.generate_surrogate_key(['status'])}} as status_id,
         status,
         _fivetran_deleted, -- where is null
         CONVERT_TIMEZONE('UTC', _fivetran_synced) AS _fivetran_synced
