@@ -14,7 +14,7 @@ renamed as (
         name,
         inventory,
         _fivetran_deleted,
-        CONVERT_TIMEZONE('UTC',_fivetran_synced) as _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) as _fivetran_synced_utc
 
     from source
 

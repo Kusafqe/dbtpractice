@@ -18,7 +18,7 @@ renamed as (
         created_at,
         IFF(order_id='', null, order_id) as order_id,
         _fivetran_deleted,
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) as _fivetran_synced_utc
 
     from source
 
