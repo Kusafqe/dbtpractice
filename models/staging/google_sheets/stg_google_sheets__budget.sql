@@ -13,7 +13,7 @@ renamed as (
         quantity,
         month,
         product_id,
-        _fivetran_synced
+        CONVERT_TIMEZONE('UTC',_fivetran_synced) as _fivetran_synced_utc
 
     from source
 

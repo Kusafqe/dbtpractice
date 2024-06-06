@@ -14,7 +14,7 @@ renamed as (
         name,
         inventory,
         --_fivetran_deleted,
-        _fivetran_synced
+        _fivetran_synced_utc
 
     from source
 

@@ -3,9 +3,9 @@ with
 source as (
 
     select O.*, OI.product_id, OI.quantity, P.price_euros from {{ ref("stg_sql_server__orders") }} O 
-    LEFT JOIN {{ ref("stg_sql_server__order_items") }} OI
+    JOIN {{ ref("stg_sql_server__order_items") }} OI
     ON O.order_id = OI.order_id
-    LEFT JOIN {{ ref("stg_sql_server__products")}} P
+    JOIN {{ ref("stg_sql_server__products")}} P
     ON OI.product_id = P.product_id
     where O._fivetran_deleted is null
 
@@ -20,7 +20,7 @@ renamed as (
 
         product_id,
         quantity,
-        price_euros,
+        --price_euros,
         (quantity*price_euros) as price_line_euros,
         
         shipping_cost_euros,
@@ -31,11 +31,12 @@ renamed as (
         order_cost_euros,
         user_id,
         order_total_euros,
+        
         delivered_at,
         tracking_id,
         status_id,
         --_fivetran_deleted,
-        _fivetran_synced
+        _fivetran_synced_utc
 
     from source
     
