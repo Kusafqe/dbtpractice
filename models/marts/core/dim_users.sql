@@ -16,7 +16,7 @@ renamed as (
         last_name,
         created_at,
         phone_number,
-        total_orders,
+        --total_orders, -- Se podría calcular en un mart 
         first_name,
         email,
         --coalesce (regexp_like(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$')= true,false) as is_valid_email_address, 
