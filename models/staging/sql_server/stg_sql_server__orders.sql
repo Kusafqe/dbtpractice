@@ -13,7 +13,7 @@ renamed as (
         shipping_id,
         shipping_cost_euros,
         address_id,
-        (year(created_at)*10000+month(created_at)*100+day(created_at)) as date_id,
+        created_at,
         promo_id,
         estimated_delivery_at,
         order_cost_euros,
